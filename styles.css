@@ -1,5 +1,5 @@
 :root {
-
+  --negro: black;
   --blanco: white;
   --tipo-titular: 'Playfair Display', serif;
   --tipo-principal: 'Inter', sans-serif;
@@ -34,9 +34,71 @@ body {
   font-family: var(--tipo-principal);
   font-size: 100%;
   min-height: 100vh;
-  background-color: var(--blanco);
+  background-color: var(--negro);
+  color: var(--blanco);
 }
 
+
+.circulos {
+  position: fixed;
+  width:100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+
+  filter: blur(40px);
+  animation: circulo1 50s linear infinite both
+
+
+}
+.circulos .circulo {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  animation: circulo1 50s linear infinite both
+
+}
+
+.circulos .circulo1 {
+  top: 0%;
+  left: 0%;
+}
+
+
+.circulos .circulo1 .path {
+  fill: #2f2f2b;
+}
+
+.circulos .circulo2 {
+  top: 0%;
+  right: 0%;
+}
+
+.circulos .circulo2 .path {
+  fill: #fe6f27;
+
+}
+
+.circulos .circulo3 {
+  bottom: 0%;
+  right: 0%;
+}
+
+.circulos .circulo3 .path {
+  fill: #5a0f2e;
+
+}
+
+.circulos .circulo4 {
+  bottom: 0%;
+  left: 0%;
+}
+
+.circulos .circulo4 .path {
+  fill: #ffa67e;
+
+}
 
 .header {
   width: 100%;
@@ -73,15 +135,17 @@ body {
 
 /*Seccion 1 - Inicio */
 .main {
-  background: lightgray;
+  background: rgba(0, 0, 0, 0.8);
   margin: 0 0 1em;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .seccion {
   width: 100%;
   min-height: 80vh;
-  background: lightblue;
+  /* background: lightblue; */
   /* margin: 1em 0; */
   padding: 2em;
 
@@ -94,8 +158,7 @@ body {
 .seccion .info {
   font-size: 1.2em;
 }
-.seccion .circulos {}
-.seccion .circulo {}
+
 .seccion .ul {
   /* background: red; */
   margin: 2em 0 0;
@@ -110,7 +173,7 @@ body {
   margin: 0 1em;
 }
 .section .ul .a{
-  border: 2px solid rgba(0, 0, 0, .4);
+  border: 2px solid rgba(255, 255, 255, .4);
   border-radius: 50%;
   padding: 1em 1em 1em;
   text-transform: uppercase;
@@ -118,7 +181,7 @@ body {
 }
 
 .section .ul .a:hover{
-  border-color: black;
+  border-color: var(--blanco);
 }
 
 .seccion .h2 {
@@ -137,8 +200,6 @@ body {
 
 /* Sección 2 - Works */
 
-.seccion .p {}
-
 .seccion .grid {
   width: 90%;
   max-width: 40em;
@@ -152,7 +213,6 @@ body {
 .seccion .article {
   width: 100%;
   min-height: 20vh;
-  background: lightgoldenrodyellow;
 
   display: flex;
   flex-flow: column nowrap;
@@ -161,9 +221,9 @@ body {
 
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
 }
 
-.seccion .a {}
 .seccion .figure {
   width: 100%;
   background: red;
@@ -204,21 +264,25 @@ body {
 
 }
 
+.works {
+  /* background: rgba(0, 0, 0, 0.707); */
+  color: white;
+}
+
 .works .h2 {
   margin-bottom: 1rem;
 }
 
 /* Sección 3 - About */
-.about {}
+
 .about .h2 {
   margin: 0 0 2rem;
 }
 
 .about .p {
   max-width: 40rem;
-  /* background: lime; */
   margin: 0 0 2rem;
-  font-size: 1.5em;
+  font-size: 1.1em;
   text-align: left;
 }
 
@@ -237,8 +301,6 @@ body {
   margin: 0 1em;
 }
 
-.about .a {}
-
 .about .svg {
   width: 3em;
   height: 3em;
@@ -246,9 +308,19 @@ body {
 }
 
 .footer {
-  background-color: lightpink;
+  color: var(--blanco);
   padding: 2em 0;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 .footer .span {}
 
+@keyframes circulo1 {
+  from{
+    transform: rotate(0deg) scale(2.5);
+  }
+  to{
+    transform: rotate(360deg) scale(2.5);
+  }
+}
