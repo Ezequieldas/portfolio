@@ -20,7 +20,6 @@ $('body').on({ 'mousemove' : function( e ){
       $('#cursor').removeClass('mini')
 
     },
-
 })
 })
 
